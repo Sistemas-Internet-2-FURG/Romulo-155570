@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="flex h-full w-full items-center justify-center">
+            <!-- Imagem na esquerda -->
+            <div class="flex flex-col items-center justify-center hidden bg-white h-full min-h-screen md:flex lg:w-7/12 xl:w-7/12">
+                <img
+                    src="./img/peep.svg"
+                    class="w-full hidden lg:block"
+                />
+                <h1 class="w-full hidden text-gray-700 lg:flex justify-center mb-4 font-extrabold leading-none text-2xl">
+                    Sua conta para tudo, 
+                    <span class="inset-0 bg-gradient-to-r from-red-600 via-purple-600 to-red-700 bg-clip-text text-transparent">
+                        ‎ reinvente-se<span class="text-gray-700">!</span>
+                    </span>
+                </h1>
+            </div>
+            <!-- -->
+            
+            <!-- Formulário na direita -->
+            <div class="w-full py-10 bg-gray-200 h-full min-h-screen min-h-full flex items-center lg:w-5/12 xl:w-5/12">
+                <div class="flex flex-col items-center justify-center mx-auto">  
+                    <h1 class="text-xl w-96 flex justify-center mb-3 font-bold leading-tight tracking-tight text-gray-900">
+                        Crie sua conta gratuitamente.
+                    </h1>
+                    <div class="w-full max-h-screen bg-white rounded-lg shadow">
+                        <div class="w-full p-10 space-y-4">
+
+
+                            <form class="space-y-5 ml-1 w-94" action="#">
+                                <div>
+                                    <label for="text" class="block mb-1 text-sm font-medium text-gray-900">Nome</label>
+                                    <input type="text" name="first-name" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="João" required>
+                                </div>
+                                <div>
+                                    <label for="text" class="block mb-1 text-sm font-medium text-gray-900">Sobrenome</label>
+                                    <input type="text" name="second-name" id="second-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="Pereira da Silva" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-1 text-sm font-medium text-gray-900">E-mail</label>
+                                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="nome@compania.com" required>
+                                </div>
+                                <div>
+                                    <label for="CPF" class="block mb-1 text-sm font-medium text-gray-900">CPF</label>
+                                    <input type="text" name="cpf" maxlength="14" id="cpf" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="XXX.XXX.XXX-XX" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-1 text-sm font-medium text-gray-900">UF</label>
+                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring">
+                                        <option>DF</option>
+                                        <option>AC</option>
+                                        <option>AL</option>
+                                        <option>AP</option>
+                                        <option>AM</option>
+                                        <option>BA</option>
+                                        <option>CE</option>
+                                        <option>ES</option>
+                                        <option>GO</option>
+                                        <option>MA</option>
+                                        <option>MT</option>
+                                        <option>MS</option>
+                                        <option>MG</option>
+                                        <option>PA</option>
+                                        <option>PB</option>
+                                        <option>PR</option>
+                                        <option>PE</option>
+                                        <option>PI</option>
+                                        <option>RJ</option>
+                                        <option>RN</option>
+                                        <option>RS</option>
+                                        <option>RO</option>
+                                        <option>RR</option>
+                                        <option>SC</option>
+                                        <option>SP</option>
+                                        <option>SE</option>
+                                        <option>TO</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="date" class="block mb-1 text-sm font-medium text-gray-900">Data de nascimento</label>
+                                    <input type="date" name="date" id="date" class="bg-gray-50 border  border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" required>
+                                </div>
+                                
+                                <button type="submit" class="w-full mt-5 mb-5 py-3 bg-red-600 sm:text-sm text-white rounded-lg hover:bg-red-500">Cadastrar-se</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+            <!-- -->
+    
+        </div>
+        
+
+    </body>
+</html>
