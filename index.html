@@ -35,27 +35,29 @@
                     <div class="w-full max-h-screen bg-white rounded-lg shadow">
                         <div class="w-full p-10 space-y-4">
 
+                            <div id='successMessage' class="p-4 hidden flex justify-center text-green-500 text-md bg-green-100 border rounded-md border-green-500"></div>
+                            <div id='errorMessage' class="p-4 hidden flex justify-center text-red-500 text-md bg-red-100 border rounded-md border-red-500"></div>
 
                             <form class="space-y-5 ml-1 w-94" action="#">
                                 <div>
-                                    <label for="text" class="block mb-1 text-sm font-medium text-gray-900">Nome</label>
-                                    <input type="text" name="first-name" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="João" required>
+                                    <label for="text" id="label-firstName" class="block mb-1 text-sm font-medium text-gray-900">Nome</label>
+                                    <input type="text" name="first-name" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="João" required>
                                 </div>
                                 <div>
-                                    <label for="text" class="block mb-1 text-sm font-medium text-gray-900">Sobrenome</label>
-                                    <input type="text" name="second-name" id="second-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="Pereira da Silva" required>
+                                    <label for="text" id="label-secondName" class="block mb-1 text-sm font-medium text-gray-900">Sobrenome</label>
+                                    <input type="text" name="second-name" id="second-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="Pereira da Silva" required>
                                 </div>
                                 <div>
-                                    <label for="email" class="block mb-1 text-sm font-medium text-gray-900">E-mail</label>
-                                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="nome@compania.com" required>
+                                    <label for="email" id="label-email" class="block mb-1 text-sm font-medium text-gray-900">E-mail</label>
+                                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="nome@compania.com" required>
                                 </div>
                                 <div>
-                                    <label for="CPF" class="block mb-1 text-sm font-medium text-gray-900">CPF</label>
-                                    <input type="text" name="cpf" maxlength="14" id="cpf" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" placeholder="XXX.XXX.XXX-XX" required>
+                                    <label for="CPF" id="label-cpf" class="block mb-1 text-sm font-medium text-gray-900">CPF</label>
+                                    <input type="text" name="cpf" maxlength="14" id="cpf" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="XXX.XXX.XXX-XX" required>
                                 </div>
                                 <div>
-                                    <label for="email" class="block mb-1 text-sm font-medium text-gray-900">UF</label>
-                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring">
+                                    <label for="region" class="block mb-1 text-sm font-medium text-gray-900">UF</label>
+                                    <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none ">
                                         <option>DF</option>
                                         <option>AC</option>
                                         <option>AL</option>
@@ -86,8 +88,8 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label for="date" class="block mb-1 text-sm font-medium text-gray-900">Data de nascimento</label>
-                                    <input type="date" name="date" id="date" class="bg-gray-50 border  border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:ring" required>
+                                    <label for="date" id="label-date" class="block mb-1 text-sm font-medium text-gray-900">Data de nascimento</label>
+                                    <input type="date" name="date" id="date" class="bg-gray-50 border  border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " required>
                                 </div>
                                 
                                 <button type="submit" class="w-full mt-5 mb-5 py-3 bg-red-600 sm:text-sm text-white rounded-lg hover:bg-red-500">Cadastrar-se</button>
@@ -101,4 +103,6 @@
         
 
     </body>
+
+    <script src="./js/cpf-format.js"></script>
 </html>
