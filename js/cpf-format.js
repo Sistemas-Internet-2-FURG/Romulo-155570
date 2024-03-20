@@ -1,4 +1,10 @@
-function formatarCPF(cpf) {
+/*
+
+    Aqui adicionamos . e - nos números inseridos no input do CPF.
+
+*/
+
+function formatCPF(cpf) {
     cpf = cpf.replace(/\D/g, '');
     
     if (cpf.length <= 3) {
@@ -11,14 +17,13 @@ function formatarCPF(cpf) {
         return cpf.slice(0, 3) + '.' + cpf.slice(3, 6) + '.' + cpf.slice(6, 9) + '-' + cpf.slice(9);
     }
 }
-function aplicarFormatacao(event) {
-    var input = event.target;
-    var valor = input.value;
 
-    valor = formatarCPF(valor);
-    
-    // Mudando o valor do input:
-    input.value = valor; 
+function changeCPF(event) {
+    var input = event.target;
+    var cpf = input.value;
+
+    cpf = formatCPF(cpf);
+    input.value = cpf; 
 }
 
-document.getElementById('cpf').addEventListener('input', aplicarFormatacao);
+document.getElementById('cpf').addEventListener('input', changeCPF);
