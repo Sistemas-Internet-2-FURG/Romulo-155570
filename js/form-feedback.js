@@ -34,7 +34,7 @@ export function showSuccessMessage(text) {
     
 };
 
-export function hideSuccessMessage(text) {
+export function hideSuccessMessage() {
     document.getElementById('success-message').setAttribute('style', 'display: none');
 };
 
@@ -43,7 +43,7 @@ export function showErrorMessage(text) {
     document.getElementById('error-message').innerHTML = text;
 };
 
-export function hideErrorMessage(text) {
-    document.getElementById('error-message').setAttribute('style', 'display: block');
+export function hideErrorMessage() {
+    document.getElementById('error-message').setAttribute('style', 'display: none');
 };
 //
