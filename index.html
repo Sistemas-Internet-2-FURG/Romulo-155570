@@ -27,18 +27,18 @@
             <!-- -->
             
             <!-- Formulário na direita -->
-            <div class="w-full py-10 bg-gray-200 h-full min-h-screen min-h-full flex items-center lg:w-5/12 xl:w-5/12">
+            <div class="w-11/12 py-10 bg-gray-200 h-full min-h-screen min-h-full flex items-center lg:w-5/12 xl:w-5/12">
                 <div class="flex flex-col items-center justify-center mx-auto">  
-                    <h1 class="text-xl w-96 flex justify-center mb-3 font-bold leading-tight tracking-tight text-gray-900">
+                    <h1 class="text-xl w-11/12 flex justify-center mb-3 font-bold leading-tight tracking-tight text-gray-900">
                         Crie sua conta gratuitamente.
                     </h1>
                     <div class="w-full max-h-screen bg-white rounded-lg shadow">
                         <div class="w-full p-10 space-y-4">
 
-                            <div id='successMessage' class="p-4 hidden flex justify-center text-green-500 text-md bg-green-100 border rounded-md border-green-500"></div>
-                            <div id='errorMessage' class="p-4 hidden flex justify-center text-red-500 text-md bg-red-100 border rounded-md border-red-500"></div>
+                            <div id='success-message' class="p-4 hidden flex justify-center text-green-500 text-md bg-green-100 border rounded-md border-green-500"></div>
+                            <div id='error-message' class="p-4 hidden flex justify-center text-red-500 text-md bg-red-100 border rounded-md border-red-500"></div>
 
-                            <form class="space-y-5 ml-1 w-96" action="#">
+                            <form class="space-y-5 ml-1 w-96" id="main-form">
                                 <div>
                                     <label for="text" id="label-firstName" class="block mb-1 text-sm font-medium text-gray-900">Nome</label>
                                     <input type="text" name="first-name" id="first-name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="João" required>
@@ -56,15 +56,16 @@
                                     <input type="text" name="cpf" maxlength="14" id="cpf" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " placeholder="XXX.XXX.XXX-XX" required>
                                 </div>
                                 <div>
-                                    <label for="region" class="block mb-1 text-sm font-medium text-gray-900">UF</label>
+                                    <label for="region" id="label-region" class="block mb-1 text-sm font-medium text-gray-900">UF</label>
                                     <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none ">
-                                        <option>Distrito Federal</option>
+                                        <option> </option>
                                         <option>Acre</option>
                                         <option>Alagoas</option>
                                         <option>Amapá</option>
                                         <option>Amazonas</option>
                                         <option>Bahia</option>
                                         <option>Ceará</option>
+                                        <option>Distrito Federal</option>
                                         <option>Espírito Santo</option>
                                         <option>Goiás</option>
                                         <option>Maranhão</option>
@@ -89,13 +90,16 @@
                                 </div>
                                 <div>
                                     <label for="date" id="label-date" class="block mb-1 text-sm font-medium text-gray-900">Data de nascimento</label>
-                                    <input type="date" name="date" id="date" class="bg-gray-50 border  border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " required>
+                                    <input type="date" name="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:outline-none " required>
                                 </div>
                                 
                                 <button type="submit" class="w-full mt-5 mb-5 py-3 bg-red-600 sm:text-sm text-white rounded-lg hover:bg-red-500">Cadastrar-se</button>
                             </form>
                         </div>
+                    </div>
                 </div>
+
+            
             </div>
             <!-- -->
     
@@ -105,4 +109,5 @@
     </body>
 
     <script src="./js/cpf-format.js"></script>
+    <script type="module" src="./js/form-listeners.js"></script>
 </html>
