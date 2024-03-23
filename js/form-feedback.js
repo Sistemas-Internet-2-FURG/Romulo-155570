@@ -40,7 +40,7 @@ export function showSuccessMessage(text) {
     let notificationArea = document.getElementById('notification-area');
     notificationArea.appendChild(notification);
 
-    setTimeout(() => { notification.remove() }, 6000);
+    setTimeout(() => { notification.remove() }, 5500);
 
     let closeButton = notification.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
@@ -61,7 +61,7 @@ export function showErrorMessage(text) {
     let notificationArea = document.getElementById('notification-area');
     notificationArea.appendChild(notification);
 
-    setTimeout(() => { notification.remove() }, 6000);
+    setTimeout(() => { notification.remove() }, 5500);
 
     let closeButton = notification.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
