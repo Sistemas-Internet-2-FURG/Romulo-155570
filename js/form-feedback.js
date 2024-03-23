@@ -12,7 +12,6 @@ export function changeLabelAndInputToRed(label, text, input) {
     document.getElementById(input).setAttribute('style', 'border-color: red');
 };
 
-
 export function changeLabelAndInputToGreen(label, text, input) {
     document.getElementById(label).setAttribute('style', 'color: #22c55e; font-weight: 600;')
     document.getElementById(label).innerHTML = text;
@@ -29,21 +28,44 @@ export function resetLabelAndInput(label, text, input) {
 
 // Mensagens de sucesso e erro:
 export function showSuccessMessage(text) {
-    document.getElementById('success-message').setAttribute('style', 'display: block');
-    document.getElementById('success-message').innerHTML = text;
-    
-};
+    let notification = document.createElement('div');
+    notification.classList.add('notification', 'success');
+    notification.innerHTML = `
+                                <p>${text}</p>
+                                <button class="bg-green-50 hover:bg-green-200 rounded-lg p-2 close-button">
+                                    <img class="w-6 h-6" src="./img/close-green-icon.png" />
+                                </button>
+                            `
 
-export function hideSuccessMessage() {
-    document.getElementById('success-message').setAttribute('style', 'display: none');
+    let notificationArea = document.getElementById('notification-area');
+    notificationArea.appendChild(notification);
+
+    setTimeout(() => { notification.remove() }, 6000);
+
+    let closeButton = notification.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+        notification.remove(); // Remover a notificação quando o botão for clicado
+    });
 };
 
 export function showErrorMessage(text) {
-    document.getElementById('error-message').setAttribute('style', 'display: block');
-    document.getElementById('error-message').innerHTML = text;
-};
+    let notification = document.createElement('div');
+    notification.classList.add('notification', 'error');
+    notification.innerHTML = `
+                                <p>${text}</p>
+                                <button class="bg-red-50 hover:bg-red-200 rounded-lg p-2 close-button">
+                                    <img class="w-6 h-6" src="./img/close-red-icon.png" />
+                                </button>
+                            `
 
-export function hideErrorMessage() {
-    document.getElementById('error-message').setAttribute('style', 'display: none');
+    let notificationArea = document.getElementById('notification-area');
+    notificationArea.appendChild(notification);
+
+    setTimeout(() => { notification.remove() }, 6000);
+
+    let closeButton = notification.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+        notification.remove();
+    });
 };
 //

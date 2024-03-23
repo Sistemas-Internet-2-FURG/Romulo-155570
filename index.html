@@ -7,15 +7,16 @@
         <link rel="stylesheet" href="./style.css">
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     </head>
-
+    
     <body>
-
+        
+        
         <div class="flex h-full w-full items-center justify-center">
             <!-- Imagem na esquerda -->
             <div class="flex flex-col items-center justify-center hidden bg-white h-full min-h-screen md:flex lg:w-7/12 xl:w-7/12">
                 <img
-                    src="./img/peep.svg"
-                    class="w-full hidden lg:block"
+                src="./img/peep.svg"
+                class="w-full hidden lg:block"
                 />
                 <h1 class="w-full hidden text-gray-700 lg:flex justify-center mb-4 font-extrabold leading-none text-2xl">
                     Sua conta para tudo, 
@@ -34,10 +35,7 @@
                     </h1>
                     <div class="w-full max-h-screen bg-white rounded-lg shadow">
                         <div class="w-full p-10 space-y-4">
-
-                            <div id='success-message' class="p-4 hidden flex justify-center text-green-500 text-md bg-green-100 border rounded-md border-green-500"></div>
-                            <div id='error-message' class="p-4 hidden flex justify-center text-red-500 text-md bg-red-100 border rounded-md border-red-500"></div>
-
+    
                             <form class="space-y-5 ml-1 w-96" id="main-form">
                                 <div>
                                     <label for="text" id="label-firstName" class="block mb-1 text-sm font-medium text-gray-900">Nome</label>
@@ -95,17 +93,15 @@
                                 
                                 <button type="submit" class="w-full mt-5 mb-5 py-3 bg-red-600 sm:text-sm text-white rounded-lg hover:bg-red-500">Cadastrar-se</button>
                             </form>
-                        </div>
+                        </div>              
                     </div>
-                </div>
-
-            
+                </div>      
             </div>
             <!-- -->
-    
         </div>
         
-
+        <div id="notification-area" class="notification-area"></div>
+        
     </body>
 
     <script src="./js/cpf-format.js"></script>

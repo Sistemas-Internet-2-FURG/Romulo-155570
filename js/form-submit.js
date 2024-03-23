@@ -1,5 +1,5 @@
 import { isFirstNameValid, isSecondNameValid, isEmailValid, isCpfValid, isRegionValid, isDateValid, selectRegion, inputDate } from "./form-listeners.js";
-import { changeLabelAndInputToRed, hideErrorMessage, hideSuccessMessage, resetLabelAndInput, showErrorMessage, showSuccessMessage } from "./form-feedback.js";
+import { changeLabelAndInputToRed, resetLabelAndInput, showErrorMessage, showSuccessMessage } from "./form-feedback.js";
 import { checkAge } from "./date-check.js";
 
 let form = document.getElementById("main-form");
@@ -15,7 +15,6 @@ function resetAllInputs() {
 
 function errorMessage(){
     showErrorMessage('Corrija os campos inválidos.');
-    setTimeout(() => { hideErrorMessage() }, 6000);
 }
 
 function formSubmit() {
@@ -31,8 +30,7 @@ function formSubmit() {
         return
     } else if (!checkAge(inputDate.value)) {
         changeLabelAndInputToRed('label-date', 'Você precisa ser maior de 16 anos e não ter mais de 120 anos de idade', 'date');
-        showErrorMessage('Corrija os campos inválidos.');
-        setTimeout(() => { hideErrorMessage() }, 6000);
+        errorMessage();
         return
     }
 
@@ -63,7 +61,6 @@ function formSubmit() {
             break;
         default:
             showSuccessMessage('Conta criada com sucesso.');
-            setTimeout(() => { hideSuccessMessage() }, 6000);
             resetAllInputs();
     };
 }
