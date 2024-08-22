@@ -54,12 +54,32 @@ def edit_aluno(id):
     turmas = Turma.query.all()
     return render_template('edit_student.html', aluno=aluno, turmas=turmas)
 
-@app.route('/delete_turma/<int:id>')
+@app.route('/delete_turma/<int:id>', methods=['GET'])
 def delete_turma(id):
     turma = Turma.query.get_or_404(id)
+    alunos = Aluno.query.filter_by(turma_id=id).all()
+
+    for aluno in alunos:
+        db.session.delete(aluno)
+
     db.session.delete(turma)
     db.session.commit()
     return redirect(url_for('index'))
+
+"""
+# Here i change the turma_id to NULL and don't delete then
+@app.route('/delete_turma/<int:id>', methods=['GET'])
+def delete_turma(id):
+    turma = Turma.query.get_or_404(id)
+    alunos = Aluno.query.filter_by(turma_id=id).all()
+
+    for aluno in alunos:
+        aluno.turma_id = None
+
+    db.session.delete(turma)
+    db.session.commit()
+    return redirect(url_for('index'))
+"""
 
 @app.route('/delete_aluno/<int:id>')
 def delete_aluno(id):
