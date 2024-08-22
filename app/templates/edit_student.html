@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/edit_aluno/{{ aluno.id }}" method="post">
+    <div class="mb-3">
+        <label>Nome do Aluno</label>
+        <input type="text" name="nome" placeholder="Nome do Aluno" class="form-control" value="{{ aluno.nome }}" required/>
+    </div> 
+    <div class="mb-3">
+        <label>Turma</label>
+        <select class="form-select" name="turma_id" required>
+            {% for turma in turmas %}
+                <option value="{{ turma.id }}" {% if turma.id == aluno.turma_id %} selected {% endif %}>{{ turma.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <input type="submit" value="Update" class="btn btn-primary mb-3"/>  
+</form> 
+{% endblock content %}
