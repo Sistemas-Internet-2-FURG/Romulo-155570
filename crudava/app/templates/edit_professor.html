@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/edit_professor/{{ professor.id }}" method="post">
+    <div class="mb-3">
+        <label>Nome do Professor</label>
+        <input type="text" name="nome" placeholder="Nome do Professor" class="form-control" value="{{ professor.nome }}" required/>
+    </div>
+    <div class="mb-3">
+        <label>Senha</label>
+        <input type="password" name="senha" placeholder="Nova Senha (deixe em branco para manter a senha atual)" class="form-control"/>
+    </div>
+    <input type="submit" value="Atualizar" class="btn btn-primary mb-3"/>  
+</form>
+{% endblock %}

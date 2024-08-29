@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/edit_turma/{{ turma.id }}" method="post">
+    <div class="mb-3">
+        <label>Nome da Turma</label>
+        <input type="text" name="nome" placeholder="Nome da Turma" class="form-control" value="{{ turma.nome }}" required/>
+    </div> 
+    <input type="submit" value="Update" class="btn btn-primary mb-3"/>  
+</form> 
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100 p-5">
+    <form action="/add_aluno" method="post" class="w-100 w-md-50 p-4 border rounded-lg bg-light shadow-sm">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome do Aluno</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome do Aluno" class="form-control" required/>
+        </div> 
+        <div class="mb-3">
+            <label for="turma_id" class="form-label">Turma</label>
+            <select id="turma_id" class="form-select" name="turma_id" required>
+                {% for turma in turmas %}
+                    <option value="{{ turma.id }}">{{ turma.nome }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+</div>
+{% endblock content %}
