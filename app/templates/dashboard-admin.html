@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex flex-col p-10">
+    <div class="w-full">
+        <h2>Professores</h2>
+        <a href="/add_professor" class="btn btn-primary mb-3">Adicionar professor</a>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th width="200">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for professor in professors %}
+                    <tr>
+                        <td>{{ professor.id }}</td>
+                        <td>{{ professor.nome }}</td>
+                        <td>
+                            <a href="/edit_professor/{{ professor.id }}" class="btn btn-success">Editar</a>
+                            <a href="/delete_professor/{{ professor.id }}" class="btn btn-danger">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    <div class="col-6">
+<div class="flex flex-col p-10">
+    <div class="w-full">
         <h2>Turmas</h2>
-        <a href="/add_turma" class="btn btn-primary mb-3">Add New Turma</a>
+        <a href="/add_turma" class="btn btn-primary mb-3">Adicionar turma</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th width="200">Action</th>
+                    <th width="200">Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,24 +19,24 @@
                         <td>{{ turma.id }}</td>
                         <td>{{ turma.nome }}</td>
                         <td>
-                            <a href="/edit_turma/{{ turma.id }}" class="btn btn-success">Edit</a>
-                            <a href="/delete_turma/{{ turma.id }}" class="btn btn-danger">Delete</a>
+                            <a href="/edit_turma/{{ turma.id }}" class="btn btn-success">Editar</a>
+                            <a href="/delete_turma/{{ turma.id }}" class="btn btn-danger">Deletar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-    <div class="col-6">
+    <div class="w-full p-10">
         <h2>Alunos</h2>
-        <a href="/add_aluno" class="btn btn-primary mb-3">Add New Aluno</a>
+        <a href="/add_aluno" class="btn btn-primary mb-3">Adicionar aluno</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Turma</th>
-                    <th width="200">Action</th>
+                    <th width="200">Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,8 +46,8 @@
                         <td>{{ aluno.nome }}</td>
                         <td>{{ aluno.turma.nome }}</td>
                         <td>
-                            <a href="/edit_aluno/{{ aluno.id }}" class="btn btn-success">Edit</a>
-                            <a href="/delete_aluno/{{ aluno.id }}" class="btn btn-danger">Delete</a>
+                            <a href="/edit_aluno/{{ aluno.id }}" class="btn btn-success">Editar</a>
+                            <a href="/delete_aluno/{{ aluno.id }}" class="btn btn-danger">Deletar</a>
                         </td>
                     </tr>
                 {% endfor %}
