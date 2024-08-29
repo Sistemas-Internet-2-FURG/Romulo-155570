@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100 p-5">
+    <form action="/add_professor" method="post" class="w-100 w-md-50 p-4 border rounded-lg bg-light shadow-sm">
+        <div class="mb-3">
+            <label>Nome do Professor</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome do professor" class="form-control" required/>
+        </div>
+        <div class="mb-3">
+            <label>Senha do professor</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha do professor" class="form-control" required/>
+        </div>  
+        <input type="submit" value="Submit" class="btn btn-primary mb-3"/>  
+    </form> 
+</div>
+{% endblock content %}
