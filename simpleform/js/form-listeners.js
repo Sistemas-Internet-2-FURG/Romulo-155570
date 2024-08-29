@@ -51,7 +51,7 @@ inputSecondName.addEventListener('keyup', () => {
         changeLabelAndInputToGreen('label-secondName', 'Sobrenome', 'second-name');
         isSecondNameValid = true;
     }
-})
+})                     
 //
 
 // Email:
